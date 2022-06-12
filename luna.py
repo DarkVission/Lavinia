@@ -5,7 +5,6 @@ from asyncio import gather, get_event_loop, sleep
 from aiohttp import ClientSession
 from pyrogram import Client, filters, idle
 from Python_ARQ import ARQ
-from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 is_config = os.path.exists("config.py")
 
@@ -56,16 +55,8 @@ async def repo(_, message):
     await message.reply_text(
         "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
         + " | [Group](t.me/PatheticProgrammers)",
-reply_markup = InlineKeyboardMarkup(
-    "[[
-        InlineKeyboardButton(" ᴏᴡɴᴇʀ ", url=f"https://t.me/NA_VA_N_JA_NA1"),
-        InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/NightVission")
-    ],
-     [
-         InlineKeyboardButton(" ɪɴʟɪɴᴇ ", switch_inline_query_current_chat=""),
-         InlineKeyboardButton("More amazing Bots",
-                              url=f"https://t.me/NightVission")
-     ]])",
+        disable_web_page_preview=True,
+    )
 
 
 @luna.on_message(filters.command("help") & ~filters.edited)
