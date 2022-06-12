@@ -65,8 +65,8 @@ reply_markup = InlineKeyboardMarkup(
          InlineKeyboardButton(" ɪɴʟɪɴᴇ ", switch_inline_query_current_chat=""),
          InlineKeyboardButton("More amazing Bots",
                               url=f"https://t.me/NightVission")
-     ]]
-),
+     ]])
+
 
 @luna.on_message(filters.command("help") & ~filters.edited)
 async def start(_, message):
