@@ -53,7 +53,9 @@ async def type_and_send(message):
 
 @luna.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
-    await message.reply_markup = InlineKeyboardMarkup(
+    await message.reply_massage = (massage,"I'm Night Vission Ai"),
+reply_markup =
+ InlineKeyboardMarkup(
     [[
         InlineKeyboardButton(" ᴏᴡɴᴇʀ ", url=f"https://t.me/NA_VA_N_JA_NA1"),
         InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/NightVission")
