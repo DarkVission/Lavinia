@@ -56,8 +56,6 @@ async def repo(_, message):
     await message.reply_text(
         "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
         + " | [Group](t.me/PatheticProgrammers)",
-        disable_web_page_preview=True,
-    )
 reply_markup =
  InlineKeyboardMarkup(
     [[
