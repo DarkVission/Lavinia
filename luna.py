@@ -57,7 +57,7 @@ async def repo(_, message):
         "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
         + " | [Group](t.me/PatheticProgrammers)",
 reply_markup = InlineKeyboardMarkup(
-    [[
+    "[[
         InlineKeyboardButton(" ᴏᴡɴᴇʀ ", url=f"https://t.me/NA_VA_N_JA_NA1"),
         InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/NightVission")
     ],
@@ -65,7 +65,7 @@ reply_markup = InlineKeyboardMarkup(
          InlineKeyboardButton(" ɪɴʟɪɴᴇ ", switch_inline_query_current_chat=""),
          InlineKeyboardButton("More amazing Bots",
                               url=f"https://t.me/NightVission")
-     ]])
+     ]])",
 
 
 @luna.on_message(filters.command("help") & ~filters.edited)
