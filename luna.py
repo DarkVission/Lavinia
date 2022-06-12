@@ -5,6 +5,7 @@ from asyncio import gather, get_event_loop, sleep
 from aiohttp import ClientSession
 from pyrogram import Client, filters, idle
 from Python_ARQ import ARQ
+from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton
 
 is_config = os.path.exists("config.py")
 
@@ -50,18 +51,21 @@ async def type_and_send(message):
     await message._client.send_chat_action(chat_id, "cancel")
 
 
-@luna.on(events.NewMessage(pattern='/start'))
-async def start(event):
-    """Send a message when the command /start is issued."""
-    dict_ = {
-            "📢 Bot Updates":"https://t.me/NightVission",
-            "👥 Support":"https://t.me/NightVissionSupport",
-            "🤖 Developer":"https://t.me/NA_VA_N_JA_NA1",
-            "👨🏻‍💻 More bots":"https://t.me/NightVission/20"}
-    buttons = [[Button.url(k, v)] for k,v in dict_.items()]
-
-    await event.respond('Hi!\nMy Name Is File To link Uploader Bot Sent any file or direct download link to upload and get the transfer.sh download link Bot Made by @NightVission', buttons=buttons)
-    raise events.StopPropagation
+@luna.on_message(filters.command("repo") & ~filters.edited)
+async def repo(_, message):
+    await message.reply_text(
+        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
+        + " | [Group](t.me/PatheticProgrammers)",
+reply_markup = InlineKeyboardMarkup(
+    [[
+        InlineKeyboardButton(" ᴏᴡɴᴇʀ ", url=f"https://t.me/NA_VA_N_JA_NA1"),
+        InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/NightVission")
+    ],
+     [
+         InlineKeyboardButton(" ɪɴʟɪɴᴇ ", switch_inline_query_current_chat=""),
+         InlineKeyboardButton("More amazing Bots",
+                              url=f"https://t.me/NightVission")
+     ]]),
 
 
 @luna.on_message(filters.command("help") & ~filters.edited)
