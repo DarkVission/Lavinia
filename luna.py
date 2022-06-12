@@ -52,12 +52,16 @@ async def type_and_send(message):
 
 @luna.on_message(filters.command("repo") & ~filters.edited)
 async def repo(_, message):
-    await message.reply_text(
-        "[GitHub](https://github.com/thehamkercat/LunaChatBot)"
-        + " | [Group](t.me/PatheticProgrammers)",
-        disable_web_page_preview=True,
-    )
-
+    await message.reply_markup = InlineKeyboardMarkup(
+    [[
+        InlineKeyboardButton(" ᴏᴡɴᴇʀ ", url=f"https://t.me/NA_VA_N_JA_NA1"),
+        InlineKeyboardButton(" sᴜᴘᴘᴏʀᴛ ", url=f"https://t.me/NightVission")
+    ],
+     [
+         InlineKeyboardButton(" ɪɴʟɪɴᴇ ", switch_inline_query_current_chat=""),
+         InlineKeyboardButton("More amazing Bots",
+                              url=f"https://t.me/NightVission")
+     ]])
 
 @luna.on_message(filters.command("help") & ~filters.edited)
 async def start(_, message):
